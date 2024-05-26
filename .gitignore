@@ -1,2 +1,5 @@
 # Ignore vscode files
 .notebook
+
+# Python files
+__pycache__/

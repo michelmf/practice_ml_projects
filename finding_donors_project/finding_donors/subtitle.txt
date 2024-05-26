@@ -1,0 +1,428 @@
+Hi everyone, and welcome to this very important video
+on diagonalization. Now our goal in this video is to go back to this
+idea of similarity. We want to write a matrix A, similar to a diagonal matrix. As a reminder, A is similar
+to B if I can write it as P and then the matrix
+and then times p inverse. But now I want D to be diagonal, so what are the
+requirements here? I want to write A
+equals PDP inverse, where P is some invertible
+matrix and not just any B, but I want it to be diagonal.
+Why would I do this? What's the point? Why am
+I going to go through an entire lecture to
+diagonalize this matrix? To write a in this form? It turns out it's really
+helpful to write powers. But you have to appreciate
+that it's really easy to take powers of a
+diagonal matrix first. Let's just take a small
+diagonal matrix as an example. I have a diagonal
+matrix, one and two, means two by two diagonal
+matrix, let's compute D^2. If you do this, you
+get 1*2 and then 1*2. It turns out, even with your complicated definition
+of matrix multiplication, multiplying diagonal matrices is nothing more than multiplying
+the diagonal entries. Convince yourself of this. Work this out and you'll see
+you get back 1^2 and 2^2, or of course, one and four. If you start to
+take higher powers, it's exactly the same. If I wanted D^3, I get 1^3*2^3, or one and eight. Work your way in general, and you get D^n is, of course, 1^n and 2^n, so it's a fast
+way to multiply matrices. It's computationally simpler to multiply matrices
+that are diagonal. There's just less work to do. Now if I can write
+A as PDP inverse, you think about A as a function, it's some operation on vectors. Often when you have a good
+operation on vectors, so you're playing a video game and you're manipulating
+something, or you're working in a program, you often call it
+multiple times. This corresponds to taking
+powers of the matrix. Normally, these
+matrices are enormous. It's very expensive
+computationally, to take powers of a matrix. It takes a long time. But if I can write A, as PDP inverse,
+watch what happens. This would say, take
+your expression PDP inverse and multiply
+that and times. Now, at first, this seems worse. Instead of doing
+one matrix n times, I have three matrices n times. But let's expand this out. We get PDP inverse
+times PDP inverse and I would multiply that out, n times PDP inverse. What do you notice about the position of P
+and its inverse? They all cancel. What ends up happening is you have one
+matrix P in the beginning. You have D, this diagonal matrix n times, so D^n, and then there's one
+P inverse at the very end. Yes, A to the n is
+one matrix n times. But now if I write PDP inverse, I'm really just multiplying three matrices together and performing two
+matrix operations. Remember D, the diagonal matrix to a power,
+is basically free. I'm multiplying these
+numbers together. This expression is quite nice. This is, in general,
+easier to compute. There are advantages to putting A in this form if
+we can do that. As a definition, it's a hard word to say, but
+it's a good word to do. We'll say that if A
+can be written as PDP inverse for our invertible
+P and our diagonal D, then we say that A
+is diagonalizable. That's a big word,
+you want to say it with me, diagonalizable. It took me a couple
+tries to get it right. Once in a while I
+still say it wrong. Diagonalizable. This is
+a fancy way to say that A is similar to a
+diagonal matrix. I'm just repeating a definition. We already have a
+definition of similarity, but now this is a
+very specific case. When A is similar to
+not just any other B, but to a diagonal matrix D. We need to know
+when this can happen. It turns out not every matrix will be able to be diagonalized. You can't put every
+single matrix in this form and we have a theorem that tells us
+when we can do this. This is called the
+diagonalization theorem, and It says the following; an n by n matrix A is
+diagonalizable if and only if A has n linearly
+independent eigenvectors. One more time, this is really a statement about eigenvectors. If I can find n linearly
+independent eigenvectors, then I will be able
+to diagonalize A. This doesn't tell us
+how to find P or D, it just tells us
+when it can be done. In fact, here's going
+to be the relationship. If PDP inverse is our expression for A when
+it is diagonalizable, then the columns of P
+are your eigenvectors and the entries of D will
+be your eigenvalues. We'll list them in the
+same order that we list the columns of P. It turns
+out this eigen theory, I'm just going to keep
+calling everything eigen, this is an eigen lecture. Now this eigen theory
+about eigenvectors and eigenvalues can be
+used to construct P, we still have to find P inverse
+in the two by two case, it is not a problem
+to find an inverse, and that's most of the examples that we'll
+do in this class, but in general this is no good, you're going to
+need to rereduce. Not my favorite thing, but we
+have an algorithm to do it. Remember, you would take P, you would join it
+to the identity and you'll rereduce both sides. What you'll see is once
+we master this skill of finding PDP inverse, at
+least in the small case, the rest of the course
+will be the theory to try to find a better
+way to get P inverse. Then once we wrap everything up, we'll have a really nice way
+to diagonalize the matrix. Another way to say,
+this is important too, n linearly independent
+eigenvectors. That's saying that you
+have an eigenbasis of R^n. Remember, if I have n linearly independent vectors of R^n, then they will
+certainly span R^n. We have a nice eigenbasis. What we're after is going
+from our starting point, which is usually
+the standard basis, to replacing those standard basis
+vectors with eigenvectors. Let's do a small example and let's see how
+this whole process works where we want
+to diagonalize A = 4, 2, -3, -1. We'll use this to
+find some powers. This is like a recipe
+or process to do it, we know we need eigenvalues
+and eigenvectors, let's go ahead and
+get those first. Sometimes it's given,
+sometimes it's not, but we need to find
+the eigenvalues of A. Well, how do we do that? As a reminder, we need to
+take the determinant of A minus Lambda I and we
+set that equal to zero. When we do that, it's
+two by two so you can imagine just subtracting
+Lambda off the diagonal, we're going to get
+4-Lambda*-1-Lambda. Multiply the diagonal
+entries minus the product of the off-diagonal so
+minus -6 and I get zero. This simplifies. You got to foil this out to Lambda^2-3Lambda+2 and I have a nice quadratic equation. This equation actually factors, you could do the
+quadratic formula, but it factor as Lambda-2
+and Lambda-1 = 0, and thus my roots are Lambda
+is 1 and Lambda is 2. Step 1, carefully
+find the eigenvalues. Let's go ahead next and find the corresponding
+eigenvectors. We want to find
+the eigenvectors, We treat each Lambda1 at a time. As a reminder, let's just
+start with Lambda is 2 for no good reason.
+Where are we after? We really want the
+null space of A-2I, so I go back to my matrix A. And I plug in Lambda = 2 and I subtract that off the main
+diagonal. What do I do here? I take 4 and I subtract 2, so you get 2, -3, and then 2. Now I'm going to subtract
+2 off the main diagonal, -1, -2 is -3. Again, I want my null space, which means I append the
+zero vector and create an augmented matrix
+and then I row reduce. This matrix that you create
+remember by construction, this should always have
+a non-trivial solution. Notice when we reduce, the second row goes away
+and I have a free variable. This should always happen. If you ever reduce and you get a pivot back
+in every column, you made a mistake somewhere. Go through this and see
+if you can find it. I have a pivot variable,
+I have a free variable. Let's write our pivot
+in terms of the free so 2x_1 = 3x_2. Again it says -3 there but
+move it to the other side. You can rearrange some
+things and get x_1 is 3/2x_2 and you can set
+up your solution vector, which would be x_1 and x_2, and make the substitution
+that you have and you get 3/2x_2*x_2. What do we normally do?
+We normally factor out the common variable and I
+get 3/2 and 1 and in fact, it's common also to
+clear denominators. Let's multiply everything
+by 2 and I get 3 and 2 There is my first eigenvector
+that I want, 3 and 2. For all the same reasons, I'll let you practice this. Find the null space
+corresponding to Lambda = 1. I want now null space of A-1 times the identity or
+just A minus the identity. When you work this out, do all the same stuff in
+the interest of time, you'll get back the vector as your second eigenvector 1, 1. I leave that to you
+as an exercise. You go through and
+find eigenvalues and eigenvectors the
+way you know how. What is the next thing to do? Well, let's build P. P Is
+built from the eigenvectors. I take my first eigenvector 3/2 and that becomes
+the first column. I take my second eigenvector 1, 1, and that becomes
+the second column. Once you have that, you
+have to build D and the entries of D are your
+corresponding eigenvalues. This is important though,
+whatever you picked for your first eigenvector, it has to correspond to
+the first eigenvalue. Since we picked 3, 2, I have to pick as my first
+eigenvector Lambda = 2. Don't mix up the order
+here, you'll get it wrong. The second eigenvector
+is then just good old 1. Last but not least, you have to find P inverse. I picked a nice two by two example just to keep things
+simple on the inverse side. Remember it's 1 over
+the determinant, here, the determinant is 3-2, which is just 1. Maybe I'll write it here
+just to remind you. Then you switch the
+main diagonal, so 1, 3, and then you negate the
+off diagonals -1, -2. You get the matrix 1, -1, -2, 3, reading the rows and
+then put it all together. I guess maybe the last
+step is to check it but A is PDP inverse. For us, this would imply that 4, 2, 3, -1 is 3, 2, 1, 1P*D*P inverse 1, -1, -2 and 3. This is mildly amazing.
+You should check this. This absolutely works.
+It's fantastic. What you're doing is you're
+factoring the matrix. You've done this with numbers,
+when you take a number and you factor it
+into its pieces, like you take 15
+and you break it up into like 3 and 5 you
+want to see the primes. What we're doing here is we're really breaking this up into its eigenvalue and
+eigenvector decomposition. Again why do we do this? What's the point? Well, this
+makes life really easy. If I wanted to compute like A^3, it would be computationally
+easier for me. Maybe you don't appreciate in its smaller case
+two by two but I can write this as PD^3P inverse. Then taking powers
+of D^3, of course, this would just be P*8 and 1. Instead of actually
+multiplying A three times, I would just multiply
+P by this 8, 1 matrix and then multiply
+that by P inverse. It works out quite nicely. Again, the numbers
+here don't matter, it's more the concept of why would you want
+to diagonalize. Taking powers is a very
+normal and natural thing we do with matrices.
+This is nice. Let's do one more example. Let's go through this again. I'm going to skip some of
+the tedious steps here, but I want you to see
+this one more time. Let's go for a little
+bit of a larger matrix, let's go three by three. I'll read off the columns, so 3, -3, and 0, 0, 4, and 0, and then 0, 9, and 3. I have a nice three
+by three matrix. What are my steps when you
+get asked to diagonalize A? As a reminder, what
+does that mean? I want to show that A is
+similar to a diagonal matrix D, which means I want to
+write this PDP inverse for some invertible and some
+diagonal D. The first step, I want you to find
+the eigenvalues. Now here's a good place
+for you to pause and go through the steps
+and see if you can find the eigenvalues. Pause the video, and see
+if you can solve it. It's a little bit more complicated because
+it's three by three, but that doesn't mean
+you can't do it. We have the determinant
+here of A minus Lambda_I, and we set that equal to 0. In particular, we
+have the determinant of 3 minus Lambda, 4 minus Lambda, and
+then 3 minus Lambda. I always write that
+first Lambda diagonal so that I know I have
+enough space in my columns, and then I just fill
+in the other numbers, 0, 0, 0, and 9. It looks scary, but there
+are a lot of zeros. Remember we set this
+whole thing equal to 0, and then we'd solve for Lambda. It doesn't matter which way
+you do cofactor expansion, let's just take this
+three minus Lambda first. Then remember how it works, you multiply it by the determinant of the
+smaller two by two matrix. In this case here
+it's 4 minus Lambda, 9, 0, and 3 minus Lambda. There is other stuff that we'd
+have to do, but of course, if I go across the first row, I am basically adding a
+lot of zeros together, so I don't need to
+write that out. When you get back, well, you get back three minus Lambda. Then notice I have a nice
+upper triangular matrix, so its determinant
+is just the product of the diagonal entries. You get back two eigenvalues. You have Lambda equals 3. Notice that it has
+multiplicity two. Then I have Lambda equals 4. I found my two eigenvalues, hopefully you found those
+as well. Check your work. If you're good about that, let's move on to the next step. Let's find our eigenvectors. It doesn't matter
+which order you do it, you got to
+do it for both. Let's do Lambda equals 3, and we'll do Lambda equals 4. Here's a good place,
+pause the video and see if you can find the eigenvalues. We're after this basis
+of the null space. As a reminder here, I want
+the null space of A-3I, so I'm going to
+actually plug in and subtract three off of
+each diagonal entry, and then I do the same
+thing and I subtract four off of each diagonal entry. I think three is the
+more interesting one, so let's do that one together. When you subtract three off each diagonal entry,
+what do you get back? You get back along
+the diagonal 0, 1, and 0. I subtracted three from
+each diagonal entry. The other numbers do
+not change, so 0, 0, -3, 0, there's a nine over here. Remember, I need to
+find the null space, so I append the zero vector. This is interesting. I
+only have one equation, so I don't have to
+actually reduce at all. In fact, if I just jump
+out of the equation, I have -3x_1+x_2+9x_3 = 0. When you solve for
+your variable, we're going to skip some
+of the calculations here, but when you solve for the
+variable and write x_1, x_2, x3, you solve for the pivot variable which is x_1
+in terms of the three. When you do that, just move everything over and
+divide by three, we get 1/3x_2+3x_3, and then x_2 and x_3
+are my free variables. I have two free variables. Let's factor out the x_2, and I get 1/3, 1, and 0. If I factor out the x_3, I get 3, 0, and 1. Those are the two eigenvectors
+that I want, v_1 and v_2. What we'll do is we'll multiply v_1 by three, clear
+those denominators. We're starting to build P. You can already see
+P starting to form. If I multiply the
+first vector by three, normal thing to do,
+clear denominators, you get 1, 3, and 0, and then the second
+vector is already there, 3, 0, and 1, so we're good. For Lambda is four,
+this one is fine, I'll let you do the
+work on this one, but it turns out, after you
+do some work on this one, finding the null space of A-4I, it turns out that your
+third eigenvector is just going to be the vector 0, 1, 0. By the way, notice that v_3 is linearly independent
+to v_1 and v_2. That was a theorem that
+guaranteed that to happen, so we expected that to happen, and that third
+eigenvector becomes the third column of P. Now
+just be careful in order, once P is built, we can then build our D, and that is found by using the eigenvalues
+in the same order. I used the two eigenvectors
+from Lambda is three, so I have 3, 3, and then a 4. Here's the pain point. This is something
+that we do need to work on, we need to fix. But right now, I don't
+have a good way to do it other than to
+just brute force it. Again, I'm going
+to punt a little bit on the row reduction, but if you take P and adjoin it to the identity matrix and you row reduce this thing so the left side becomes
+the identity matrix, the right side
+becomes P inverse. I leave this as a
+no-fun exercise, but you can trust me on this
+or work it out yourself. It turns out the columns
+of P inverse are 1, 0, -3, 0, 0, 1, and -3, 1, 9. Then you can check A = P. DP invert. Another nice example of how to diagonalize a matrix. What's the difference between
+this one and the other one? Well, the last one I had two
+eigenvalues and they gave each a corresponding
+contribution to your eigenbasis, to your set of linearly
+independent eigenvectors. Here, I only had
+two eigenvalues. But that's okay because
+one eigenvalue, Lambda = 3 was giving
+this extra contribution. I had twp eigenvalues
+from Lambda is 3. Put that together with the
+one eigenvalue from Lambda is 4 and I had the three
+eigenvectors that I needed, so Lambda = 3 was giving
+an extra contribution. That was nice. I'm glad that worked out, but the problem is that
+doesn't always happen. Once in a while, you get an eigenvalue that doesn't carry its weight and doesn't contribute the extra
+eigenvectors needed. Let me just show you how that happens and where
+diagonalization can fail, where this process breaks down. Let's take the matrix A
+with columns 2, -4, and 3, 4, -6, and 3, 3, -3, and 1. It has eigenvalues 1 and -2. Minus 2 has multiplicity two, so it appears twice
+when you find it. You can also calculate that the first eigenspace
+corresponding to Lambda is 1, is the span of the
+vector 1, -1, and 1. The eigenvalue Lambda
+is 1 contributes one vector to the basis.
+Here's the problem. Lambda = 2, if I look at its eigenspace, go through all the same
+process of before, it's eigenvector would
+be -1, 1, and 0. It contributes a line. If you think about
+what's going on here, A is a map from R^3 to R^3. I have good old R^3, but my eigenspaces correspond
+to two different lines. Here's Lambda = 1
+eigenspace and Lambda = 2. If I grab one vector from each, I don't have an eigenbasis. Remember, having
+an eigenbasis is the geometric way of saying that a matrix is diagonalizable. Here, these matrices
+come up short. In particular, I
+can't form P and that says that A is not
+diagonalizable. It's important to realize that some matrices are
+diagonalizable and some matrices are not just like some matrices are invertible
+and some matrices are not. Now, for every eigenvalue, by its construction, there's always at
+least one eigenvector. Every eigenvalue will always contribute at least a line or one eigenvector to the eigenbasis.
+Hopefully have enough. Remember, if you have
+different eigenvectors corresponding to
+different eigenvalues, then those are automatically
+linearly independent. That was the theorem
+we had before. If you put those
+two ideas together, you get this following theorem. If A is an n*n and it has
+distinct eigenvalues, then A is diagonalizable.
+This is nice. We talk about n
+distinct eigenvalues. Again, every eigenvalue will contribute to one vector
+to the eigenbasis. If I have n eigenvalues, then I get n linearly independent eigenvectors
+and there it is, I have my eigenbasis. The issue occurs when
+you have repeated roots. When you have algebraic
+multiplicity greater than one, that's the problem, and that's the thing to
+recognize. Here's the issue. If some Lambda has algebraic multiplicity
+greater than or equal to 2, or strictly greater than one, then A may not be
+diagonalizable. We need a theorem to tell us
+when A is diagonalizable in that case and that's our second theorem
+for the slide here. We're going to let A be
+n*n with repeated roots. We're going to say Lambda_1
+with repeated eigenvalues. Lambda_1 through Lambda_p, so p is strictly less
+than n. These are our roots of the
+characteristic polynomial. Some of these are repeated
+just like in the last example. Here's a couple of
+statements that we can say. We'll say that the dimension of the eigenspace corresponding to Lambda is always less
+than or equal to the algebraic
+multiplicity of Lambda. Remember, algebraic multiplicity is how many times it
+appears if you write out all the roots as a list and the eigenspace is a geometric object and
+it has a dimension. If you're a line, you may have
+algebraic multiplicity 2. That means your eigenspace
+could be a line or a plane. But the point is this number, sometimes this is called
+the geometric multiplicity. This theorem says the geometric multiplicity of Lambda will always be less than equal to
+the algebraic multiplicity. This inequality is a good one, but whenever you
+have an inequality, you always want to know what
+happens when it's equal, and that's when A
+is diagonalizable. A is diagonalizable
+if and only if the sum of the dimensions
+of all the eigenspaces, so we're going from k = 1 to p, is equal to n. If all the
+eigenspaces add up to equal n, then A will be diagonalizable. Remember this is
+the same as saying that we're going to
+have an eigenbasis. This turns out to be
+true if and only if, one, here's your algebraic
+way to think about it, the characteristic
+polynomial factors completely into linear factors. It factors completely into
+linear factors, or two, the dimension of the
+eigenspace is equal to the algebraic multiplicity of
+Lambda for all eigenvalues. If you get equality on part
+a, then this will be true. In general, the dimension of the eigenspace is always
+less but if it happens to equal the algebraic
+multiplicity for every single repeated root, then you're going to
+have an eigenbasis. We're starting to get different
+characteristics of this. Let's just put down
+that notion of eigenbasis and that'll be
+our part c. It says that if A is diagonalizable and we look at the basis
+of each eigenspace, then a basis of R^n will be the union of all the individual
+basis of the eigenspaces. You'll always get an eigenbasis if you are diagonalizable. A lot of big words here, but the point is
+diagonalizable means you're similar to a diagonal matrix, and having an eigenbasis
+means you have n linearly independent vectors that are all eigen vectors. Basically, you have
+enough good eigenvectors. This is the idea. Let this
+sink in for a minute. The key takeaway though is that some matrices are diagonalizable
+and some are not. This tells you when
+they are and when it's worth your time to go
+through with the process. Before I move on
+to the next slide, I really want to
+stress one thing. The idea of diagonalization and invertibility are separate. One does not imply the other. If you have a matrix
+that is diagonalizable, we're talking about
+eigenvalues and eigenvectors in creating
+this factorization. That's fine. If we're
+talking about invertibility, that's a different question.
+Do I have an inverse? One does not imply the other. There are diagonalizable
+matrices that are invertible and vice versa, and there are some
+diagonalizable matrices that are
+just non-invertible. Be careful, this is
+a separate concept. I know we talk about
+invertibility a lot, but this is a very
+separate concept that does not imply
+invertibility. Let's do an example. We'll do more theoretical
+than actual numbers. Let's see if you can get a
+handle on this concept here. We're going to let A be a four-by-four matrix and we're going to say we have
+eigenvalues of 5, 3, and -2. We're going to say the
+dimension of the eigenspace corresponding to three is two. That means that I have
+a plane. The eigenspace corresponding to
+Lambda 3 is a plane. There's some plane
+that gets stretched, every vector gets
+multiplied by three. Can we determine if A is diagonalizable?
+Here's the question. Is A diagonalizable
+and what do we need? To do this, you
+need an eigenbasis. Do you have enough eigenvectors? Here it's 4, 4 so really, we need an eigenbasis of R^4. I know that the dimension of the eigenspace
+corresponding to Lambda 3, Lambda = 3 is 2, so that means it's going
+to contribute two vectors, linearly independent vectors, some plane and these
+will be eigenvectors. I have two already. I have a basis for my
+eigenspace of Lambdas 2. Let's use the givens here. But remember every
+single eigenvalue, let's look at five, it will always contribute
+at least one vector. I have to have one from Lambda
+= 5 from its eigenspace, and the other one
+corresponding to Lambdas 2 that's going to
+give me the fourth one. Every basis is going
+to have at least one. It's nice that Lambdas 3 is carrying the
+extra weight here. Put them together, take
+their union of all of them, and you get a basis of R^4. That'll just be v_1, v_2, v_3, and v_4. All of these are
+eigenvalues because they correspond to
+distinct eigenvalues. We know that they will
+be linearly independent. I get a nice basis of R^4. Once you have a basis of R^4
+consisting of eigenvectors, final answer here, yes,
+A is diagonalizable. Sometimes you just
+ask, can it be done versus should we go through the process and actually do it? One last true, false, to see who's paying attention.
+We'll do this quick. If A is invertible, then is A diagonalizable? True or false. Does
+one imply the other? Hopefully, you heard me
+go on my rant before, but I say a lot of
+things and I don't know who really
+listened. We'll see. If A is invertible, then
+is A diagonalizable? True or false. Ready? This turns
+out to be false. You could take the matrix
+that we did before, the one that we saw was
+not diagonalizable. The matrix with columns 2, -4, and 3, 4 -6, and 3, 3 -3, and 1. We saw this was not
+diagonalizable, but if you want, you can
+compute this determinant. It turns out its determinant
+is four. It is invertible. I have a nice invertible matrix here that is not diagonalizable. My true-false
+statement is false. Remember, invertibility
+and diagonalization, they are two separate concepts. I think of it almost
+like a Venn diagram. I have those matrices
+that are invertible. I have those matrices
+that are diagonal. Here's one that is
+invertible but not diagonal. Our matrix A would
+live out here. There are some that are both invertible and diagonalizable. Then of course
+there are some that are diagonal but non-invertible. Those would be our
+diagonalizable matrices with determinant 0. Keep these concepts separate. The goal of this video
+is to make sure you know when a matrix is diagonalizable and
+then once it is how to find the diagonalization. Our pain point right
+now comes from the fact that not every
+matrix is diagonalizable. This process can break down. I still need to find P inverse, finalize the process, and that's a little
+bit of a pain point. We'll work on that
+throughout the course but come away with
+these skills so far. Great job on this video.
+We'll see you next time.
